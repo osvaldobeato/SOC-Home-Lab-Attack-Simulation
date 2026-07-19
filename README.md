@@ -70,68 +70,65 @@ The following steps document the creation of the isolated SOC environment that w
 <img width="1920" height="1080" alt="1-Starting with a clean Windows host before building the SOC home lab" src="https://github.com/user-attachments/assets/0b65c88b-2f13-47a9-83ad-8b03cd5881cb" />
 Starting with a clean Windows host before building the SOC home lab
 
-<br>
 
 <img width="1920" height="1080" alt="2-Downloading Oracle VirtualBox to create the virtual lab Environment" src="https://github.com/user-attachments/assets/ec327f6c-4fe6-4b8b-949f-a843dbd5f307" />
 Downloading Oracle VirtualBox to create the virtual lab Environment
-<br>
+
 
 <img width="1920" height="1080" alt="3-Verified the VirtualBox installer intergrity using SHA256 before installation  This is a great screenshot because it shows security awareness" src="https://github.com/user-attachments/assets/dcd88307-b509-4c4c-b462-31cf540cdb5a" />
 Verified the VirtualBox installer intergrity using SHA256 before installation. This is a great screenshot because it shows security awareness
-<br>
+
 
 <img width="1920" height="1080" alt="5-VirtualBox successfully installed and ready to host virtual machines " src="https://github.com/user-attachments/assets/8bd10ee3-1ad6-4f7a-a2ef-63a26d0f82a0" />
 VirtualBox successfully installed and ready to host virtual machines
-<br>
+
 
 <img width="1920" height="1080" alt="7-Creating te Windows 10 virtual machine and allocating system resources " src="https://github.com/user-attachments/assets/4eda38bf-0204-4c1a-b5c3-76f64b56f358" />
 Creating te Windows 10 virtual machine and allocating system resources
-<br>
+
 
 <img width="1920" height="1080" alt="11-Windows 10 virtual machine successfully deployed" src="https://github.com/user-attachments/assets/65e3d12e-ae12-40d3-a031-48e7a51331d4" />
 Windows 10 virtual machine successfully deployed
-<br>
+
 
 <img width="1920" height="1080" alt="13-Successfully built a dual-VM SOC home lab consisting of a Windows endpoint and a Kali Linux attacker machine " src="https://github.com/user-attachments/assets/5d39ab1f-7adf-47af-9960-9bcc938d4f5c" />
 Successfully built a dual-VM SOC home lab consisting of a Windows endpoint and a Kali Linux attacker machine
-<br>
+
 
 <img width="1920" height="1080" alt="16-Reconfigured the Windows virtual machine to use an isolated Internal Network, preventing direct communication with the host or external internet" src="https://github.com/user-attachments/assets/feba7c82-9f1a-41b1-8dde-b88ddae1f77b" />
 Reconfigured the Windows virtual machine to use an isolated Internal Network, preventing direct communication with the host or external internet
 
-<br>
 
 <img width="1920" height="1080" alt="17-Configured the Kali Linux VM to join the same isolated Internal Network for controlled communication with the Windows analysis workstation" src="https://github.com/user-attachments/assets/422a170f-4555-413b-a476-8e94bb049b3c" />
 Configured the Kali Linux VM to join the same isolated Internal Network for controlled communication with the Windows analysis workstation
 
-<br>
 
 <img width="1920" height="1080" alt="19-Assigned a static IPv4 address to the Windows VM to enable predictables communication within the isolated lab network" src="https://github.com/user-attachments/assets/38fef270-1e05-4ad1-bf7c-747cbcd51cae" />
 Assigned a static IPv4 address to the Windows VM to enable predictables communication within the isolated lab network
-<br>
+
 
 <img width="1920" height="1080" alt="21-Configured Kali Linux with a static IP address on the same subnet to support isolated host-to-host communication" src="https://github.com/user-attachments/assets/a7688bb3-10f4-48df-93f8-320af8d514de" />
 Configured Kali Linux with a static IP address on the same subnet to support isolated host-to-host communication
-<br>
+
 
 <img width="1920" height="1080" alt="23-Verified successful communication between the Windows and Kal virtual machines across the isolated Internal Network while maintaining separation from the host operating system" src="https://github.com/user-attachments/assets/609b4314-a66d-44e6-af21-2885ddffd1cb" />
 Verified successful communication between the Windows and Kal virtual machines across the isolated Internal Network while maintaining separation from the host operating system
-<br>
+
 
 <img width="1920" height="1080" alt="24-Splunk and Sysmon successfully configured  Verified telemetry ingestion by querying the endpoint index, confirming sysmon events are being collected and indexed for investigation" src="https://github.com/user-attachments/assets/19dc4512-5533-4881-a28e-963e58c721e2" />
 Splunk and Sysmon successfully configured. Verified telemetry ingestion by querying the endpoint index, confirming sysmon events are being collected and indexed for investigation
-<br>
+
 
 
 ### Phase 2 – Attack Simulation
 
 <img width="1920" height="1080" alt="26-Confirmed Kali attacker VM IP addresss before generating lab traffic " src="https://github.com/user-attachments/assets/a8494b65-ab20-4862-863b-92f506874202" />
 Confirmed Kali attacker VM IP addresss before generating lab traffic 
-<br>
+
 
 <img width="1920" height="1080" alt="27-Performed reconnaissance against the Windows endpoint and identified exposed services " src="https://github.com/user-attachments/assets/84e1d611-6dd0-4303-8ea5-83e042b2c75a" />
 Performed reconnaissance against the Windows endpoint and identified exposed services 
-<br>
+
 
 <img width="1920" height="1080" alt="28-Created a controlled test executable using a double extension to generate endpoint telemetry" src="https://github.com/user-attachments/assets/67a39ccc-64de-4609-a10e-1ba6a04da599" />
 Created a controlled test executable using a double extension to generate endpoint telemetry
@@ -156,7 +153,7 @@ Successfully established a Meterpreter reverse TCP session from the Windows endp
 <img width="1920" height="1080" alt="34-Verified the Windows endpoint initiated a TCP connection to the Kali attacker&#39;s listener on port 4444 using netstat -anob " src="https://github.com/user-attachments/assets/4d953d93-938b-4724-9f1f-f284d110749a" />
 Verified the Windows endpoint initiated a TCP connection to the Kali attacker's listener on port 4444 using netstat -anob 
 
-
+<br>
 
 ### Phase 3 – Investigation
 
@@ -183,7 +180,8 @@ Pivoted on the Sysmon ProcessGuid to correlate related process creation events a
 <img width="1920" height="1080" alt="40-Correlated events using the ProcessGuid and confirmed the malicious process executed host discovery commands including ipconfig, net user, and net localgroup" src="https://github.com/user-attachments/assets/971d16ff-ec28-4b83-bec0-a88de91a11b2" />
 Correlated events using the ProcessGuid and confirmed the malicious process executed host discovery commands including ipconfig, net user, and net localgroup
 
-
+<br>
+<br>
 
 ## Indicators of Compromise (IOCs)
 
@@ -197,7 +195,7 @@ During the investigation, several Indicators of Compromise (IOCs) were identifie
 - Process GUIDs used to correlate related events across the investigation.
 - Splunk logs confirming endpoint telemetry associated with the simulated compromise.
 
-
+<br>
 
 ## MITRE ATT&CK Mapping
 
@@ -212,7 +210,7 @@ During the investigation, several Indicators of Compromise (IOCs) were identifie
 | Discovery | Process Discovery | T1057 |
 | Defense Evasion | Masquerading (Resume.pdf.exe) | T1036 |
 
-
+<br>
 
 ## Key Findings
 
@@ -224,7 +222,7 @@ During the investigation, several Indicators of Compromise (IOCs) were identifie
 - Demonstrated the effectiveness of centralized log collection for endpoint investigations.
 - Validated that Splunk can rapidly identify suspicious endpoint behavior using Sysmon telemetry.
 
-
+<br>
 
 ## Lessons Learned
 
